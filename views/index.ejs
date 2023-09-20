@@ -1,0 +1,36 @@
+<%-include('partials/header.ejs')  %>
+
+<body>
+
+    <div class="_box _main">
+        <!-- <h3>Today's TO-DOs</h3> -->
+        <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
+        <% var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
+        <% var d = new Date(); %>
+        <h3><span class="wd"><%= weekDay[d.getDay()] %></span> <%= months[d.getMonth()] %> <%=  d.getDate() %>,
+            <%= d.getFullYear() %></h3>
+
+        <div class="listContainer">
+
+            <form action="/Today" method="POST" class="todo">
+                <!-- <input type="checkbox" name="checkState"> -->
+                <input type="input" name="todo" autofocus autocomplete="off">
+            </form>
+
+            <div class="checklist">
+                <% if(locals.array){ %>
+                <% array.map(a => {%>
+                <!-- <input type="checkbox" <%# a[0] ? 'checked' : ''%> > -->
+                <input class="cb" type="checkbox" id="<%=array.indexOf(a)%>">
+                <p class="td"><%=a%></p>
+                <% }) %>
+                <% } %>
+            </div>
+
+        </div>
+
+
+
+</body>
+
+<%-include('partials/footer.ejs') %>
