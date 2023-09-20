@@ -3,12 +3,12 @@
 <body>
 
     <div class="_box _main">
-        <!-- <h3>Today's TO-DOs</h3> -->
+
         <% var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %>
         <% var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'] %>
         <% var d = new Date(); %>
-        <h3><span class="wd"><%= weekDay[d.getDay()] %></span> <%= months[d.getMonth()] %> <%=  d.getDate() %>,
-            <%= d.getFullYear() %></h3>
+        <div class="date"><span class="wd"><%= weekDay[d.getDay()] %></span> <%= months[d.getMonth()] %> <%=  d.getDate() %>,
+            <%= d.getFullYear() %></div>
 
         <div class="listContainer">
 

@@ -1,13 +1,16 @@
 :root {
+    --dark: #414141;
+    --light: #F0F0F0;
+    --mid: #838383;
+    --accent: #58FFDD;
+    /* --bg: #0B0B0B; */
     --bg: #212121;
-    --lt: #EFE9E4;
-    --d1: #4B474F;
-    --l1: #AC9D9D;
-    --mid: #9395A0;
-    --f2: 'Oxygen', sans-serif;
-    --f1: 'Source Sans 3', sans-serif;
-    
-
+    /* --lt: #EFE9E4; */
+    /* --d1: #4B474F; */
+    /* --l1: #AC9D9D; */
+    /* --mid: #9395A0; */
+    --f1: 'Orbitron', sans-serif;
+    --f2: 'Nunito', sans-serif;
 }
 
 * {
@@ -18,9 +21,11 @@
     /* font-family: monospace; */
 }
 
-h3 {
+.date {
     margin-top: 1rem;
-    font-family: var(--f1);
+    font-size: 1.1rem;
+    font-family: var(--f2);
+    color: var(--mid);
 }
 
 
@@ -56,9 +61,13 @@ h3 {
     width: 100vw;
     display: flex;
     justify-content: space-between;
-    background-color: var(--l1);
+    background-color: var(--dark);
     color: var(--bg);
     padding: 1rem;
+}
+
+.title {
+    color: var(--accent);
 }
 
 /* INPUT STYLE*/
@@ -117,7 +126,7 @@ h3 {
 }
 
 
-/* CHECKBOX STYLE */
+/* #cp CHECKBOX STYLE */
 .container {
     cursor: pointer;
 }
@@ -132,7 +141,7 @@ h3 {
 
 .path {
     fill: none;
-    stroke: #66B584;
+    stroke: var(--accent);
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -166,6 +175,7 @@ h3 {
 }
 
 .td {
+    color: var(--light);
     display: flex;
     height: 100%;
     align-items: center;
@@ -176,10 +186,12 @@ h3 {
 
 .strike {
     text-decoration: line-through;
+    color: var(--accent);
 }
 
 .wd {
-    color: tomato;
+    color: var(--light);
+    font-family: var(--f1);
 }
 
 .inactive {
@@ -187,7 +199,7 @@ h3 {
 }
 
 ._head {
-    color: var(--bg);
+    color: var(--mid);
     text-decoration: none;
     margin-right: 1rem;
     font-weight: bold;
@@ -195,6 +207,8 @@ h3 {
 
 footer {
     /* display:block; */
+    font-size: .8rem;
+    color: var(--mid);
     display: flex;
     justify-content: center;
     align-items: center;
