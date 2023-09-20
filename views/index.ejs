@@ -12,17 +12,29 @@
 
         <div class="listContainer">
 
-            <form action="/Today" method="POST" class="todo">
+            <form action="/Today" method="POST" class="todo form-control">
+                <input class="input input-alt" placeholder="What to do?" required="" type="text" name="todo"
+                    autofocus autocomplete="off">
+                <span class="input-border input-border-alt"></span>
+
                 <!-- <input type="checkbox" name="checkState"> -->
-                <input type="input" name="todo" autofocus autocomplete="off">
+                <!-- <input type="input" class="input" name="todo" autofocus autocomplete="off"> -->
             </form>
 
             <div class="checklist">
                 <% if(locals.array){ %>
                 <% array.map(a => {%>
                 <!-- <input type="checkbox" <%# a[0] ? 'checked' : ''%> > -->
-                <input class="cb" type="checkbox" id="<%=array.indexOf(a)%>">
+                <label class="container">
+                    <input type="checkbox" class="cb" id="<%=array.indexOf(a)%>">
+                    <svg viewBox="0 0 64 64" height="2em" width="2em">
+                      <path d="M 0 16 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 16 L 32 48 L 64 16 V 8 A 8 8 90 0 0 56 0 H 8 A 8 8 90 0 0 0 8 V 56 A 8 8 90 0 0 8 64 H 56 A 8 8 90 0 0 64 56 V 16" pathLength="575.0541381835938" class="path"></path>
+                    </svg>
+                  </label>
+
+                <!-- <input class="cb" type="checkbox" id="<%#array.indexOf(a)%>"> -->
                 <p class="td"><%=a%></p>
+
                 <% }) %>
                 <% } %>
             </div>
